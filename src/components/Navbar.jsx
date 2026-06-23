@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const links = [
     { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
+    { name: "Skills", href: "#education" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
@@ -28,17 +28,13 @@ const Navbar = () => {
               <NavLinks links={links} />
             </ul>
 
-            <Desktop/>
+            <Desktop />
 
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden text-white"
             >
-              {menuOpen ? (
-                <FaTimes size={24} />
-              ) : (
-                <FaBars size={24} />
-              )}
+              {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
         </div>

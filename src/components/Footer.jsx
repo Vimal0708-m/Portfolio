@@ -21,9 +21,17 @@ const Footer = () => {
   ];
 
   const socialIcons = [
-    { icon: FaGithub, href: "#", label: "GitHub" },
-    { icon: FaLinkedin, href: "#", label: "LinkedIn" },
-    { icon: FaTwitter, href: "#", label: "Twitter" },
+    { icon: FaGithub, href: "https://github.com/Vimal0708-m", label: "GitHub" },
+    {
+      icon: FaLinkedin,
+      href: "https://www.linkedin.com/in/bimal-kumar-murmu-b7899b351/",
+      label: "LinkedIn",
+    },
+    {
+      icon: FaTwitter,
+      href: "#",
+      label: "Twitter",
+    },
     { icon: FaEnvelope, href: "mailto:murmuv776@gmail.com", label: "Email" },
   ];
 
@@ -150,24 +158,10 @@ const Footer = () => {
         >
           <motion.p
             variants={itemVariants}
-            className="text-gray-400 text-xs sm:text-sm"
+            className="text-gray-400 text-xs sm:text-sm "
           >
-            &copy; {currentYear} All Rights Reserved | Designed & Developed with
-            ❤️
+            &copy; {currentYear} All Rights Reserved | Bimal Kumar Murmu ❤️
           </motion.p>
-
-          {/* Back to Top Button */}
-          <motion.div variants={itemVariants}>
-            <Link
-              to="hero"
-              smooth={true}
-              duration={500}
-              className="flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2 bg-linear-to-r from-cyan-500 to-blue-600 rounded-lg text-white cursor-pointer hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 text-xs sm:text-sm font-semibold"
-            >
-              <span>Back to Top</span>
-              <FaArrowUp size={12} className="sm:scale-100 scale-90" />
-            </Link>
-          </motion.div>
         </motion.div>
       </div>
 

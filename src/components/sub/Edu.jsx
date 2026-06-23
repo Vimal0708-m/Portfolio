@@ -30,7 +30,7 @@ const Edu = () => {
   ];
 
   const skills = [
-    { name: "React JS", level: 80, color: "from-blue-500 to-cyan-500" },
+    { name: "React JS", level: 70, color: "from-blue-500 to-cyan-500" },
     { name: "Tailwind CSS", level: 60, color: "from-cyan-500 to-teal-500" },
     {
       name: "Responsive Design",
@@ -39,19 +39,8 @@ const Edu = () => {
     },
     { name: "UX/UI", level: 80, color: "from-pink-500 to-rose-500" },
     { name: "JavaScript", level: 55, color: "from-yellow-500 to-orange-500" },
-    { name: "Laravel Framework", level: 10, color: "from-red-500 to-pink-500" },
+    { name: "Laravel Framework", level: 40, color: "from-red-500 to-pink-500" },
   ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
 
   return (
     <section
@@ -69,7 +58,7 @@ const Edu = () => {
           className="text-center mb-12 sm:mb-20"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -84,17 +73,18 @@ const Edu = () => {
         {/* Timeline */}
         <motion.div
           className="md:relative max-w-4xl mx-auto mb-12 sm:mb-20"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.div
-            className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-linear-to-b from-cyan-500 via-blue-500 to-purple-500 -translate-x-1/2 origin-top"
+            className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-linear-to-b from-cyan-500 via-blue-500 to-purple-500 -translate-x-1/2"
+            style={{ transformOrigin: "top" }}
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1.5 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
           />
 
           {education.map((item, index) => {
@@ -105,21 +95,13 @@ const Edu = () => {
                 className={`relative flex flex-col md:flex-row items-start md:items-center mb-8 sm:mb-12 gap-4 md:gap-0 ${
                   index % 2 === 0 ? "md:justify-start" : "md:justify-end"
                 }`}
-                initial={{
-                  opacity: 0,
-                  x: index % 2 === 0 ? -150 : 150,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.3,
-                }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
                 transition={{
-                  duration: 0.8,
+                  duration: 0.7,
                   ease: "easeOut",
+                  delay: index * 0.05,
                 }}
               >
                 {/* Card */}
@@ -152,9 +134,10 @@ const Edu = () => {
                   className="hidden md:block absolute left-1/2 w-6 h-6 bg-linear-to-r from-cyan-500 to-blue-500 rounded-full border-4 border-slate-900 -translate-x-1/2 shadow-lg shadow-cyan-500/50"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ once: true, amount: 0.25 }}
                   transition={{
                     duration: 0.5,
+                    ease: "easeOut",
                     delay: index * 0.1,
                   }}
                   whileHover={{ scale: 1.3 }}
@@ -169,29 +152,27 @@ const Edu = () => {
           className="mt-16 sm:mt-24 md:mt-32 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             Technical Skills
           </h2>
           <div className="w-20 sm:w-24 h-1 bg-linear-to-r from-cyan-500 to-blue-500 mx-auto mb-8 sm:mb-12"></div>
 
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="group px-2 sm:px-0"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeOut",
+                  delay: index * 0.05,
+                }}
               >
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3 gap-2">
                   <span className="font-semibold text-base sm:text-lg text-white group-hover:text-cyan-300 transition-colors">
@@ -201,8 +182,8 @@ const Edu = () => {
                     className="text-cyan-400 font-bold text-sm sm:text-base"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{ duration: 0.5, delay: index * 0.05 + 0.3 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: index * 0.05 + 0.2 }}
                   >
                     {skill.level}%
                   </motion.span>
@@ -213,7 +194,7 @@ const Edu = () => {
                     className={`h-full rounded-full bg-linear-to-r ${skill.color} shadow-lg`}
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{
                       duration: 1.5,
                       ease: "easeOut",
@@ -223,7 +204,7 @@ const Edu = () => {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

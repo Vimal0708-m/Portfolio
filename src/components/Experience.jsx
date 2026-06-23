@@ -4,34 +4,24 @@ import { FaBriefcase, FaCalendar, FaMapMarkerAlt } from "react-icons/fa";
 const Experience = () => {
   const experiences = [
     {
-      company: "Web Development Internship",
+      company: "Rato Guras Technology",
       position: "Frontend Developer",
-      duration: "2025 - Present",
-      location: "Japan",
+      duration: "2026 - Present",
+      location: "Remote",
       description:
         "Building responsive web applications using React and Tailwind CSS. Contributing to UI/UX improvements and collaborating with design team.",
       skills: ["React", "Tailwind CSS", "JavaScript", "UI/UX"],
       type: "Internship",
     },
     {
-      company: "Freelance Projects",
-      position: "Web Designer & Developer",
-      duration: "2024 - 2025",
-      location: "Remote",
+      company: "Super Gold CO., LTD",
+      position: "E-commerce Assistant",
+      duration: "2025/06/01 - 2025/10/15",
+      location: "Japan",
       description:
-        "Designed and developed custom websites for clients. Focused on responsive design, performance optimization, and user experience.",
-      skills: ["React", "Tailwind CSS", "Figma", "HTML/CSS"],
-      type: "Freelance",
-    },
-    {
-      company: "Educational Projects",
-      position: "Full Stack Developer",
-      duration: "2023 - 2024",
-      location: "Online",
-      description:
-        "Completed multiple web development projects as part of vocational training. Built projects using modern web technologies and best practices.",
-      skills: ["React", "Laravel", "Database Design", "Responsive Design"],
-      type: "Education",
+        "Managed product listings on Catawiki and Yahoo Auctions, edited product images using Adobe Photoshop, handled email correspondence, and maintained accurate listing information for online marketplace operations.",
+      skills: ["Adobe Photoshop"],
+      type: "Internship",
     },
   ];
 
@@ -71,7 +61,7 @@ const Experience = () => {
           className="text-center mb-12 sm:mb-20"
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.18 }}
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-linear-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -89,7 +79,7 @@ const Experience = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.18 }}
         >
           {experiences.map((exp, index) => (
             <motion.div
@@ -98,7 +88,7 @@ const Experience = () => {
               className="relative"
             >
               {/* Timeline connector */}
-              {index < experiences.length - 1 && (
+              {index < experiences.length - 0 && (
                 <div className="hidden md:block absolute left-6 top-20 w-0.5 h-24 bg-linear-to-b from-cyan-500 to-transparent"></div>
               )}
 
@@ -175,7 +165,7 @@ const Experience = () => {
           className="mt-12 sm:mt-16 md:mt-20 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.18 }}
           transition={{ duration: 0.6 }}
         >
           <p className="text-gray-300 mb-4 text-sm sm:text-base">
